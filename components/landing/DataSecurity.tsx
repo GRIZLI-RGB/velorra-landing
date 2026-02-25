@@ -1,10 +1,24 @@
+import Image from "next/image";
+
 export default function DataSecurity() {
   return (
-    <section className="px-6 py-10">
-      <h2 className="text-2xl font-semibold">Data Security</h2>
-      <p className="mt-2 text-base text-zinc-600">
-        Информация о защите данных и безопасной обработке.
-      </p>
+    <section className="">
+      <div className="default-container flex gap-11 items-center">
+        <div>
+          <h2 className="mb-2.5">Безопасность данных</h2>
+          <p>
+            Все данные хранятся и обрабатываются на российских серверах с
+            использованием собственных LLM моделей. Строгое соблюдение ФЗ-152 «О
+            персональных данных».
+          </p>
+        </div>
+        <Image
+          src="/images/security-lock.png"
+          alt=""
+          width={343}
+          height={385}
+        />
+      </div>
     </section>
   );
 }
