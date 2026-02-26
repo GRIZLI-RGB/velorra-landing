@@ -19,7 +19,7 @@ const LINK_CLASSNAME =
 
 export default function Header({ className }: { className?: string }) {
   return (
-    <header className={clsx("mt-10 mb-20", className)}>
+    <header className={clsx("mt-10", className)}>
       <div className="default-container flex items-center justify-between">
         <nav className="flex items-center gap-[60px]">
           {LEFT_LINKS.map((link) => (

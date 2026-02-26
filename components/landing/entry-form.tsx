@@ -4,6 +4,7 @@ import { ChangeEvent, ComponentProps, FormEvent, useState } from "react";
 
 import Title from "./ui/title";
 import clsx from "clsx";
+import Button from "./ui/button";
 
 type FormValues = {
   contactName: string;
@@ -146,28 +147,11 @@ export default function EntryForm({ className }: { className?: string }) {
             })}
           </div>
 
-          <button
-            type="submit"
-            className="mt-[73px] inline-flex h-[52px] px-10 items-center justify-center gap-4 rounded-full bg-(--color-blue) text-[20px] text-white transition-opacity hover:opacity-90"
-          >
-            <span>Начать тестировать</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="6"
-              viewBox="0 0 32 6"
-              fill="none"
-            >
-              <path
-                d="M31.1328 2.88672L26.1328 -3.26633e-05V5.77347L31.1328 2.88672ZM0 2.88672V3.38672H26.6328V2.88672V2.38672H0V2.88672Z"
-                fill="white"
-              />
-            </svg>
-          </button>
+          <Button text="Начать тестировать" className="mt-[73px]" />
 
           {isSubmitted ? (
             <p className="mt-4 text-sm text-[#2960EA]">
-              Заявка готова к отправке.
+              Заявка отправлена.
             </p>
           ) : null}
         </form>

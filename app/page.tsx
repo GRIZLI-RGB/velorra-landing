@@ -16,16 +16,18 @@ export default function LandingPage() {
   return (
     <>
       <Header />
-      <Hero />
-      <Stages />
-      <Examples />
-      <Features />
-      <DataSecurity />
-      <PersonalAccount />
-      <Who />
-      <LaunchPath />
-      <MakesMoney />
-      <Tariffs />
+      <Hero className="mt-20 mb-[50px]" />
+      <div className="flex flex-col gap-40">
+        <Stages />
+        <Examples />
+        <Features />
+        <DataSecurity />
+        <PersonalAccount />
+        <Who />
+        <LaunchPath />
+        <MakesMoney />
+        <Tariffs />
+      </div>
       <EntryForm className="my-[200px]" />
       <Footer />
     </>
