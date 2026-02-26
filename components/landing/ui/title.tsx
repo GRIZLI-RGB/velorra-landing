@@ -23,7 +23,7 @@ export default function Title({
   className = "",
 }: TitleProps) {
   const Tag = as;
-  const classes = `text-[45px] font-bold ${alignClasses[align]} ${className}`.trim();
+  const classes = `text-[45px] leading-[120%] font-bold ${alignClasses[align]} ${className}`.trim();
 
   return <Tag className={classes}>{children}</Tag>;
 }
