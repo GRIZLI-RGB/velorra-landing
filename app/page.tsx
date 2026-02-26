@@ -1,16 +1,16 @@
-import DataSecurity from "@/components/landing/DataSecurity";
-import EntryForm from "@/components/landing/EntryForm";
-import Examples from "@/components/landing/Examples";
-import Features from "@/components/landing/Features";
-import Footer from "@/components/landing/Footer";
-import Header from "@/components/landing/Header";
-import Hero from "@/components/landing/Hero";
-import LaunchPath from "@/components/landing/LaunchPath";
-import MakesMoney from "@/components/landing/MakesMoney";
-import PersonalAccount from "@/components/landing/PersonalAccount";
-import Stages from "@/components/landing/Stages";
-import Tariffs from "@/components/landing/Tariffs";
-import Who from "@/components/landing/Who";
+import DataSecurity from "@/components/landing/data-security";
+import EntryForm from "@/components/landing/entry-form";
+import Examples from "@/components/landing/examples";
+import Features from "@/components/landing/features";
+import Footer from "@/components/landing/footer";
+import Header from "@/components/landing/header";
+import Hero from "@/components/landing/hero";
+import LaunchPath from "@/components/landing/launch-path";
+import MakesMoney from "@/components/landing/makes-money";
+import PersonalAccount from "@/components/landing/personal-account";
+import Stages from "@/components/landing/stages";
+import Tariffs from "@/components/landing/tariffs";
+import Who from "@/components/landing/who";
 
 export default function LandingPage() {
   return (
