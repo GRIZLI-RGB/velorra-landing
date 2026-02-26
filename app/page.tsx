@@ -26,7 +26,7 @@ export default function LandingPage() {
       <LaunchPath />
       <MakesMoney />
       <Tariffs />
-      <EntryForm />
+      <EntryForm className="my-[200px]" />
       <Footer />
     </>
   );

@@ -1,8 +1,9 @@
 import Title from "./ui/title";
+import clsx from "clsx";
 
-export default function DataSecurity() {
+export default function DataSecurity({ className }: { className?: string }) {
   return (
-    <section className="">
+    <section className={clsx(className)}>
       <div className="default-container flex gap-11 items-center">
         <div className="max-w-[560px]">
           <Title as="h2" align="left">

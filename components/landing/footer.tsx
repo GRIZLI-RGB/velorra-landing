@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Logo from "./logo";
+import Logo from "@/components/landing/ui/logo";
+import clsx from "clsx";
 
 const PRODUCT_LINKS = [
   { href: "#how-it-works", label: "Как это работает" },
@@ -18,9 +19,9 @@ const LEGAL_LINKS = [
 const FOOTER_LINK_CLASSNAME =
   "relative inline-block w-fit transition-colors after:absolute after:left-0 after:bottom-[-4px] after:h-[1.5px] after:w-0 after:bg-current after:rounded-full after:transition-all after:duration-300 hover:after:w-full";
 
-export default function Footer() {
+export default function Footer({ className }: { className?: string }) {
   return (
-    <footer className="mt-[200px] mb-6">
+    <footer className={clsx("pb-6", className)}>
       <div className="default-container">
         <div className="grid grid-cols-[1fr_auto_auto] gap-20">
           <div className="flex flex-col text-[20px]">
@@ -38,7 +39,7 @@ export default function Footer() {
               href="https://t.me/velorra_support"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${FOOTER_LINK_CLASSNAME} mt-4 hover:text-(--color-blur)`}
+              className={`${FOOTER_LINK_CLASSNAME} mt-4 hover:text-(--color-blue)`}
             >
               @velorra_support
             </a>
