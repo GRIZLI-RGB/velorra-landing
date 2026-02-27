@@ -13,8 +13,21 @@ const EXAMPLES = [
 
 export default function Examples({ className }: { className?: string }) {
   return (
-    <section className={clsx(className)}>
-      <div className="default-container flex justify-center flex-col items-center text-center">
+    <section className={clsx("relative overflow-x-clip", className)}>
+      <img
+        src="/images/decor/left-around-examples.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/2 left-[calc(50%-50vw)] -translate-y-1/2 select-none"
+      />
+      <img
+        src="/images/decor/right-around-examples.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/2 right-[calc(50%-50vw)] -translate-y-1/2 select-none"
+      />
+
+      <div className="default-container relative z-10 flex justify-center flex-col items-center text-center">
         <Title className="max-w-[560px] leading-[120%]">
           Послушайте, как говорят наши ИИ-агенты
         </Title>

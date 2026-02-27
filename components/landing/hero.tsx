@@ -3,7 +3,7 @@ import Button from "./ui/button";
 
 export default function Hero({ className }: { className?: string }) {
   return (
-    <section className={clsx(className)}>
+    <section className={clsx("overflow-x-clip", className)}>
       <div className="default-container">
         <div className="flex-middle w-full">
           <div
@@ -34,8 +34,14 @@ export default function Hero({ className }: { className?: string }) {
           <Button text="Попробовать бесплатно" />
         </div>
       </div>
-      <div className="mx-auto max-w-[1100px] px-5">
-        <img src="/images/voice-line.png" alt="" />
+      <div className="relative mx-auto max-w-[1100px] px-5">
+        <img
+          src="/images/decor/left-around-voice-line.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute top-1/2 left-[calc(50%-50vw)] -translate-y-1/2 select-none"
+        />
+        <img src="/images/voice-line.png" alt="" className="relative z-10" />
       </div>
     </section>
   );

@@ -104,8 +104,15 @@ export default function EntryForm({ className }: { className?: string }) {
   };
 
   return (
-    <section className={clsx(className)}>
-      <div className="default-container flex items-start justify-between gap-10">
+    <section className={clsx("relative", className)}>
+      <img
+        src="/images/decor/center-form.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none"
+      />
+
+      <div className="default-container relative z-10 flex items-start justify-between gap-10">
         <div className="max-w-[460px] w-full">
           <Title align="left" className="leading-[120%]">
             Готовы попробовать Velorra в работе?

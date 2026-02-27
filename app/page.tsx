@@ -13,23 +13,32 @@ import Tariffs from "@/components/landing/tariffs";
 import Who from "@/components/landing/who";
 
 export default function LandingPage() {
-  return (
-    <>
-      <Header />
-      <Hero className="mt-20 mb-[50px]" />
-      <div className="flex flex-col gap-40">
-        <Stages />
-        <Examples />
-        <Features />
-        <DataSecurity />
-        <PersonalAccount />
-        <Who />
-        <LaunchPath />
-        <MakesMoney />
-        <Tariffs />
-      </div>
-      <EntryForm className="my-[200px]" />
-      <Footer />
-    </>
-  );
+	return (
+		<div className="relative">
+			<img
+				src="/images/decor/top-right-angle.png"
+				alt=""
+				aria-hidden="true"
+				className="pointer-events-none absolute top-0 right-0 z-0 select-none"
+			/>
+
+			<div className="relative z-10 pt-2.5">
+				<Header />
+				<Hero className="mt-20 mb-[50px]" />
+				<div className="flex flex-col gap-40">
+					<Stages />
+					<Examples />
+					<Features />
+					<DataSecurity />
+					<PersonalAccount />
+					<Who />
+					<LaunchPath />
+					<MakesMoney />
+					<Tariffs />
+				</div>
+				<EntryForm className="my-[200px]" />
+				<Footer />
+			</div>
+		</div>
+	);
 }
