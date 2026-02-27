@@ -53,8 +53,8 @@ function StepCard({ id, title, description }: Step) {
 
 	return (
 		<article className="relative max-md:text-center">
-			<div className="max-md:mx-auto h-10 w-10 rounded-[26px] border border-[#3D7EF4] bg-[#F0F6FF] flex items-center justify-center">
-				<span className="text-center text-[18.797px] leading-[120%] tracking-[-0.564px] font-bold text-[#3D7EF4]">
+			<div className="max-md:mx-auto h-10 w-10 rounded-[26px] border border-(--color-blue) bg-[#F0F6FF] flex items-center justify-center">
+				<span className="text-center text-[18px] leading-[120%] tracking-[-0.564px] font-bold text-(--color-blue) relative -left-px">
 					{id}
 				</span>
 			</div>
@@ -95,7 +95,7 @@ export default function LaunchPath({ className }: { className?: string }) {
 				</Title>
 
 				<div className="relative mt-10 max-[985px]:mt-8 max-md:mt-6">
-					<div className="absolute left-[50px] right-[296px] top-5 flex justify-between pointer-events-none max-[985px]:hidden">
+					<div className="absolute left-[50px] right-[304px] top-5 flex justify-between pointer-events-none max-[985px]:hidden">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="259"
@@ -124,7 +124,7 @@ export default function LaunchPath({ className }: { className?: string }) {
 						</svg>
 					</div>
 
-					<div className="grid grid-cols-3 gap-x-12 gap-y-[74px] max-[985px]:grid-cols-2 max-[985px]:gap-x-8 max-[985px]:gap-y-10 max-md:grid-cols-1 max-md:gap-6 max-md:text-center">
+					<div className="grid grid-cols-3 gap-x-12 gap-y-[60px] max-[985px]:grid-cols-2 max-[985px]:gap-x-8 max-[985px]:gap-y-10 max-md:grid-cols-1 max-md:gap-6 max-md:text-center">
 						{STEPS_TOP.map((step) => (
 							<StepCard key={step.id} {...step} />
 						))}
@@ -158,7 +158,7 @@ export default function LaunchPath({ className }: { className?: string }) {
 						</svg>
 					</div>
 
-					<div className="absolute left-[50px] right-[296px] top-[260px] flex justify-between pointer-events-none max-[985px]:hidden">
+					<div className="absolute left-[50px] right-[304px] top-[235px] flex justify-between pointer-events-none max-[985px]:hidden">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="259"
