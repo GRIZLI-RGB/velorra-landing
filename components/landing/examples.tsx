@@ -18,39 +18,43 @@ export default function Examples({ className }: { className?: string }) {
         src="/images/decor/left-around-examples.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-[calc(50%-50vw)] -translate-y-1/2 select-none"
+        className="pointer-events-none absolute top-1/2 left-[calc(50%-50vw)] -translate-y-1/2 select-none max-[985px]:hidden"
       />
       <img
         src="/images/decor/right-around-examples.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 right-[calc(50%-50vw)] -translate-y-1/2 select-none"
+        className="pointer-events-none absolute top-1/2 right-[calc(50%-50vw)] -translate-y-1/2 select-none max-[985px]:hidden"
       />
 
       <div className="default-container relative z-10 flex justify-center flex-col items-center text-center">
         <Title className="max-w-[560px] leading-[120%]">
           Послушайте, как говорят наши ИИ-агенты
         </Title>
-        <p className="mt-2.5 text-[25px] max-w-[740px]">
+        <p className="mt-2.5 max-w-[740px] text-[25px] max-[985px]:text-[20px] max-md:text-[18px]">
           Реальные записи разговоров с клиентами. Естественная речь,
           профессиональный подход и высокая эффективность.
         </p>
-        <div className="grid my-10 grid-cols-2 gap-x-11 gap-y-4 w-full">
+        <div className="my-10 grid w-full grid-cols-2 gap-x-11 gap-y-4 max-[985px]:grid-cols-1 max-[985px]:gap-4 max-md:my-8">
           {EXAMPLES.map((example) => (
             <div
               key={example.title}
-              className="rounded-[18px] w-full bg-[#FDFDFD] border border-[#C1C1C1] flex gap-6 items-start px-4 py-7"
+              className="flex w-full items-start gap-6 rounded-[18px] border border-[#C1C1C1] bg-[#FDFDFD] px-4 py-7 max-[985px]:gap-4 max-[985px]:py-5 max-md:px-3.5"
               style={{
                 boxShadow:
                   "3px 3px 4px 0 rgba(0, 0, 0, 0.04), 7px 7px 10px 0 rgba(0, 0, 0, 0.05)",
               }}
             >
-              <button className="flex-middle h-[46px] w-[46px] shrink-0 rounded-full border-[#3D7EF4] border bg-[#F0F6FF]">
+              <button className="flex-middle h-[46px] w-[46px] shrink-0 rounded-full border border-[#3D7EF4] bg-[#F0F6FF] max-md:h-10 max-md:w-10">
                 <img className="relative left-0.5" src="/icons/play.svg" alt="" />
               </button>
               <div className="flex flex-col items-start">
-                <p className="text-[20px]">{example.title}</p>
-                <p className="text-[15px] text-[#7C7C7C]">{example.description}</p>
+                <p className="text-[20px] max-[985px]:text-[18px] max-md:text-[17px]">
+                  {example.title}
+                </p>
+                <p className="text-[15px] text-[#7C7C7C] max-md:text-[14px]">
+                  {example.description}
+                </p>
               </div>
             </div>
           ))}
