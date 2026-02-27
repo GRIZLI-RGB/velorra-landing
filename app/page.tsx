@@ -22,10 +22,10 @@ export default function LandingPage() {
 				className="pointer-events-none absolute top-0 right-0 z-0 select-none"
 			/>
 
-			<div className="relative z-10 pt-2.5">
+			<div className="relative z-10 pt-9 max-md:pt-4">
 				<Header />
-				<Hero className="mt-20 mb-[50px]" />
-				<div className="flex flex-col gap-40">
+				<Hero className="mt-20 mb-[50px] max-md:mt-10 max-md:mb-8" />
+				<div className="flex flex-col gap-40 max-md:gap-20">
 					<Stages />
 					<Examples />
 					<Features />
@@ -35,9 +35,9 @@ export default function LandingPage() {
 					<LaunchPath />
 					<MakesMoney />
 					<Tariffs />
+					<EntryForm />
+					<Footer />
 				</div>
-				<EntryForm className="my-[200px]" />
-				<Footer />
 			</div>
 		</div>
 	);

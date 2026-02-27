@@ -42,13 +42,14 @@ export default function PersonalAccount({ className }: { className?: string }) {
             <button
               onClick={prev}
               aria-label="Предыдущий слайд"
-              className="absolute -left-16 z-10 flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center"
+              className="absolute left-3 z-10 flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center min-[1169px]:-left-16 min-[1169px]:h-10 min-[1169px]:w-10 max-[768px]:h-8 max-[768px]:w-8"
             >
               <Image
                 src="/images/personal-account/slider/arrow-left.svg"
                 alt=""
                 width={11}
                 height={32}
+                className="h-8 w-auto max-[768px]:h-6"
               />
             </button>
 
@@ -74,13 +75,14 @@ export default function PersonalAccount({ className }: { className?: string }) {
             <button
               onClick={next}
               aria-label="Следующий слайд"
-              className="absolute -right-16 z-10 flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center"
+              className="absolute right-3 z-10 flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center min-[1169px]:-right-16 min-[1169px]:h-10 min-[1169px]:w-10 max-[768px]:h-8 max-[768px]:w-8"
             >
               <Image
                 src="/images/personal-account/slider/arrow-right.svg"
                 alt=""
                 width={11}
                 height={32}
+                className="h-8 w-auto max-[768px]:h-6"
               />
             </button>
           </div>
