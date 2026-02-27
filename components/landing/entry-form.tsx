@@ -5,6 +5,7 @@ import { ChangeEvent, ComponentProps, FormEvent, useState } from "react";
 import Title from "./ui/title";
 import clsx from "clsx";
 import Button from "./ui/button";
+import Reveal from "./ui/reveal";
 
 type FormValues = {
 	contactName: string;
@@ -114,68 +115,75 @@ export default function EntryForm({ className }: { className?: string }) {
 			/>
 
 			<div className="default-container relative z-10 flex items-start justify-between gap-10 max-[985px]:flex-col max-[985px]:items-center max-[985px]:gap-6 max-md:gap-5">
-				<div className="w-full max-w-[460px] max-[985px]:text-center">
-					<Title
-						align="left"
-						className="leading-[120%] max-[985px]:text-center"
-					>
-						Готовы попробовать Velorra в работе?
-					</Title>
-					<p className="mt-2.5 text-[25px] max-[985px]:mt-2 max-[985px]:text-[20px] max-md:text-[18px]">
-						Оставьте заявку и получите
-						<br />
-						<b>100 минут в подарок!</b>
-					</p>
-				</div>
-
-				<form
-					className="w-full max-w-[424px] max-[985px]:max-w-full"
-					onSubmit={handleSubmit}
-					noValidate
-				>
-					<div className="space-y-[46px] max-[985px]:space-y-8 max-md:space-y-6">
-						{FORM_FIELDS.map((field) => {
-							const fieldError = formErrors[field.name];
-
-							return (
-								<div key={field.name}>
-									<label
-										htmlFor={field.name}
-										className={FIELD_LABEL_CLASS}
-									>
-										{field.label}
-									</label>
-									<input
-										id={field.name}
-										name={field.name}
-										value={formValues[field.name]}
-										onChange={(event) =>
-											handleInputChange(field.name, event)
-										}
-										className={FIELD_INPUT_CLASS}
-										inputMode={field.inputMode}
-									/>
-									{fieldError ? (
-										<p className={FIELD_ERROR_CLASS}>
-											{fieldError}
-										</p>
-									) : null}
-								</div>
-							);
-						})}
-					</div>
-
-					<Button
-						text="Начать тестировать"
-						className="mt-[73px] max-[985px]:mt-10 max-md:mt-8 max-[420px]:w-full!"
-					/>
-
-					{isSubmitted ? (
-						<p className="mt-4 text-sm text-[#2960EA]">
-							Заявка отправлена.
+				<Reveal variant="fade-left">
+					<div className="w-full max-w-[460px] max-[985px]:text-center">
+						<Title
+							align="left"
+							className="leading-[120%] max-[985px]:text-center"
+						>
+							Готовы попробовать Velorra в работе?
+						</Title>
+						<p className="mt-2.5 text-[25px] max-[985px]:mt-2 max-[985px]:text-[20px] max-md:text-[18px]">
+							Оставьте заявку и получите
+							<br />
+							<b>100 минут в подарок!</b>
 						</p>
-					) : null}
-				</form>
+					</div>
+				</Reveal>
+
+				<Reveal className="max-w-[424px] w-full max-[985px]:max-w-full" variant="fade-right" delay={200}>
+					<form
+						className="w-full max-w-[424px] max-[985px]:max-w-full"
+						onSubmit={handleSubmit}
+						noValidate
+					>
+						<div className="space-y-[46px] max-[985px]:space-y-8 max-md:space-y-6">
+							{FORM_FIELDS.map((field) => {
+								const fieldError = formErrors[field.name];
+
+								return (
+									<div key={field.name}>
+										<label
+											htmlFor={field.name}
+											className={FIELD_LABEL_CLASS}
+										>
+											{field.label}
+										</label>
+										<input
+											id={field.name}
+											name={field.name}
+											value={formValues[field.name]}
+											onChange={(event) =>
+												handleInputChange(
+													field.name,
+													event,
+												)
+											}
+											className={FIELD_INPUT_CLASS}
+											inputMode={field.inputMode}
+										/>
+										{fieldError ? (
+											<p className={FIELD_ERROR_CLASS}>
+												{fieldError}
+											</p>
+										) : null}
+									</div>
+								);
+							})}
+						</div>
+
+						<Button
+							text="Начать тестировать"
+							className="mt-[73px] max-[985px]:mt-10 max-md:mt-8 max-[420px]:w-full!"
+						/>
+
+						{isSubmitted ? (
+							<p className="mt-4 text-sm text-[#2960EA]">
+								Заявка отправлена.
+							</p>
+						) : null}
+					</form>
+				</Reveal>
 			</div>
 		</section>
 	);

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Title from "./ui/title";
+import Reveal from "./ui/reveal";
 
 type Step = {
 	id: string;
@@ -90,9 +91,11 @@ export default function LaunchPath({ className }: { className?: string }) {
 			/>
 
 			<div className="default-container relative z-10">
-				<Title className="max-w-[600px] mx-auto">
-					Быстрый запуск без боли и технических сложностей
-				</Title>
+				<Reveal>
+					<Title className="max-w-[600px] mx-auto">
+						Быстрый запуск без боли и технических сложностей
+					</Title>
+				</Reveal>
 
 				<div className="relative mt-10 max-[985px]:mt-8 max-md:mt-6">
 					<div className="absolute left-[50px] right-[304px] top-5 flex justify-between pointer-events-none max-[985px]:hidden">
@@ -125,12 +128,15 @@ export default function LaunchPath({ className }: { className?: string }) {
 					</div>
 
 					<div className="grid grid-cols-3 gap-x-12 gap-y-[60px] max-[985px]:grid-cols-2 max-[985px]:gap-x-8 max-[985px]:gap-y-10 max-md:grid-cols-1 max-md:gap-6 max-md:text-center">
-						{STEPS_TOP.map((step) => (
-							<StepCard key={step.id} {...step} />
+						{STEPS_TOP.map((step, index) => (
+							<Reveal key={step.id} delay={index * 120}>
+								<StepCard {...step} />
+							</Reveal>
 						))}
 						{STEPS_BOTTOM.map((step, i) => (
-							<div
+							<Reveal
 								key={step.id}
+								delay={(i + 3) * 120}
 								className={[
 									"max-[985px]:order-6",
 									"max-[985px]:order-5",
@@ -138,7 +144,7 @@ export default function LaunchPath({ className }: { className?: string }) {
 								][i]}
 							>
 								<StepCard {...step} />
-							</div>
+							</Reveal>
 						))}
 					</div>
 

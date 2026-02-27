@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Title from "./ui/title";
+import Reveal from "./ui/reveal";
 
 const FEATURES = [
 	{
@@ -52,34 +53,39 @@ export default function Features({ className }: { className?: string }) {
 
 			<div className="default-container relative z-10">
 				<div className="flex-middle flex-col">
-					<Title>Ключевые возможности</Title>
-					<p className="mt-2.5 mb-10 max-w-[365px] text-center text-[25px] max-[985px]:mb-8 max-[985px]:text-[20px] max-md:text-[18px]">
-						Полный набор инструментов для автоматизации телефонии
-					</p>
+					<Reveal>
+						<div className="flex-middle flex-col">
+							<Title>Ключевые возможности</Title>
+							<p className="mt-2.5 mb-10 max-w-[365px] text-center text-[25px] max-[985px]:mb-8 max-[985px]:text-[20px] max-md:text-[18px]">
+								Полный набор инструментов для автоматизации телефонии
+							</p>
+						</div>
+					</Reveal>
 					<div className="grid w-full grid-cols-2 gap-10 max-[985px]:grid-cols-1 max-[985px]:gap-6 max-md:gap-4">
-						{FEATURES.map((feature) => (
-							<div
-								key={feature.title}
-								className="flex items-start gap-4 rounded-[18px] border border-[#C1C1C1] bg-[#FDFDFD] p-[30px] max-[985px]:gap-3 max-[985px]:p-6 max-md:p-4"
-								style={{
-									boxShadow:
-										"3px 3px 4px 0 rgba(0, 0, 0, 0.04), 7px 7px 10px 0 rgba(0, 0, 0, 0.05)",
-								}}
-							>
-								<img
-									src={feature.icon}
-									alt=""
-									className="h-[30px] w-[30px] shrink-0 max-[985px]:h-7 max-[985px]:w-7 max-md:h-6 max-md:w-6"
-								/>
-								<div>
-									<h3 className="text-[20px] max-[985px]:text-[18px] max-md:text-[17px]">
-										{feature.title}
-									</h3>
-									<p className="mt-1.5 max-w-[340px] text-[15px] text-[#7C7C7C] max-md:text-[14px]">
-										{feature.description}
-									</p>
+						{FEATURES.map((feature, index) => (
+							<Reveal key={feature.title} delay={index * 100}>
+								<div
+									className="h-full flex items-start gap-4 rounded-[18px] border border-[#C1C1C1] bg-[#FDFDFD] p-[30px] max-[985px]:gap-3 max-[985px]:p-6 max-md:p-4"
+									style={{
+										boxShadow:
+											"3px 3px 4px 0 rgba(0, 0, 0, 0.04), 7px 7px 10px 0 rgba(0, 0, 0, 0.05)",
+									}}
+								>
+									<img
+										src={feature.icon}
+										alt=""
+										className="h-[30px] w-[30px] shrink-0 max-[985px]:h-7 max-[985px]:w-7 max-md:h-6 max-md:w-6"
+									/>
+									<div>
+										<h3 className="text-[20px] max-[985px]:text-[18px] max-md:text-[17px]">
+											{feature.title}
+										</h3>
+										<p className="mt-1.5 max-w-[340px] text-[15px] text-[#7C7C7C] max-md:text-[14px]">
+											{feature.description}
+										</p>
+									</div>
 								</div>
-							</div>
+							</Reveal>
 						))}
 					</div>
 				</div>

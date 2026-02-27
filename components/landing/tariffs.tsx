@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Title from "./ui/title";
+import Reveal from "./ui/reveal";
 
 const TARIFFS = [
 	{
@@ -76,18 +77,20 @@ export default function Tariffs({ className }: { className?: string }) {
 	return (
 		<section className={clsx(className)}>
 			<div className="default-container">
-				<Title className="max-w-[700px] mx-auto">
-					Модель оплаты состоит из подписки и минут разговоров.
-				</Title>
+				<Reveal>
+					<Title className="max-w-[700px] mx-auto">
+						Модель оплаты состоит из подписки и минут разговоров.
+					</Title>
+				</Reveal>
 				<div className="mt-10 mb-5 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
-					{TARIFFS.map((tariff) => (
+					{TARIFFS.map((tariff, index) => (
+						<Reveal key={tariff.name} delay={index * 120}>
 						<div
-							key={tariff.name}
 							style={{
 								boxShadow:
 									"3px 3px 4px 0 rgba(0, 0, 0, 0.02), 5px 5px 10px 0 rgba(0, 0, 0, 0.04)",
 							}}
-							className="flex flex-col rounded-[20px] border border-[#C1C1C1] bg-[#FDFDFD] py-8 px-6"
+							className="h-full flex flex-col rounded-[20px] border border-[#C1C1C1] bg-[#FDFDFD] py-8 px-6"
 						>
 							<div className="flex items-center gap-3">
 								<h3 className="text-[30px] font-bold leading-[120%] max-md:text-[24px]">
@@ -197,10 +200,12 @@ export default function Tariffs({ className }: { className?: string }) {
 								))}
 							</ul>
 						</div>
+						</Reveal>
 					))}
 				</div>
 				<div className="flex flex-col gap-2.5">
-					{SUBBLOCKS.map((item) => (
+					{SUBBLOCKS.map((item, index) => (
+						<Reveal key={item.left} delay={index * 80}>
 						<div
 							style={{
 								boxShadow:
@@ -209,7 +214,6 @@ export default function Tariffs({ className }: { className?: string }) {
 									? "linear-gradient(137.29deg, #FFFFFF 0%, #F0F6FF 99.99%)"
 									: "",
 							}}
-							key={item.left}
 							className={clsx(
 								"flex h-[60px] items-center justify-between rounded-[12px] border border-[#C1C1C1] bg-[#FDFDFD] px-6 max-md:h-[50px] max-md:px-4 max-md:text-[15px]",
 								item.isBold && "font-bold",
@@ -218,6 +222,7 @@ export default function Tariffs({ className }: { className?: string }) {
 							<span>{item.left}</span>
 							<span>{item.right}</span>
 						</div>
+						</Reveal>
 					))}
 				</div>
 			</div>

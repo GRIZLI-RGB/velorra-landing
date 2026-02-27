@@ -11,6 +11,7 @@ import PersonalAccount from "@/components/landing/personal-account";
 import Stages from "@/components/landing/stages";
 import Tariffs from "@/components/landing/tariffs";
 import Who from "@/components/landing/who";
+import Reveal from "@/components/landing/ui/reveal";
 
 export default function LandingPage() {
 	return (
@@ -26,17 +27,39 @@ export default function LandingPage() {
 				<Header />
 				<Hero className="mt-20 mb-[50px] max-md:mt-10 max-md:mb-8" />
 				<div className="flex flex-col gap-40 max-md:gap-20">
-					<Stages />
-					<Examples />
-					<Features />
-					<DataSecurity />
-					<PersonalAccount />
-					<Who />
-					<LaunchPath />
-					<MakesMoney />
-					<Tariffs />
-					<EntryForm />
-					<Footer />
+					<Reveal>
+						<Stages />
+					</Reveal>
+					<Reveal>
+						<Examples />
+					</Reveal>
+					<Reveal>
+						<Features />
+					</Reveal>
+					<Reveal>
+						<DataSecurity />
+					</Reveal>
+					<Reveal>
+						<PersonalAccount />
+					</Reveal>
+					<Reveal>
+						<Who />
+					</Reveal>
+					<Reveal>
+						<LaunchPath />
+					</Reveal>
+					<Reveal>
+						<MakesMoney />
+					</Reveal>
+					<Reveal>
+						<Tariffs />
+					</Reveal>
+					<Reveal>
+						<EntryForm />
+					</Reveal>
+					<Reveal>
+						<Footer />
+					</Reveal>
 				</div>
 			</div>
 		</div>
