@@ -52,13 +52,13 @@ function StepCard({ id, title, description }: Step) {
 	const lines = title.split("\n");
 
 	return (
-		<article className="relative">
-			<div className="h-10 w-10 rounded-[26.46px] border-[0.875px] border-[#3D7EF4] bg-[#F0F6FF] flex items-center justify-center">
+		<article className="relative max-md:text-center">
+			<div className="max-md:mx-auto h-10 w-10 rounded-[26px] border border-[#3D7EF4] bg-[#F0F6FF] flex items-center justify-center">
 				<span className="text-center text-[18.797px] leading-[120%] tracking-[-0.564px] font-bold text-[#3D7EF4]">
 					{id}
 				</span>
 			</div>
-			<h3 className="mt-[22px] text-[20px] leading-[120%]">
+			<h3 className="mt-[22px] text-[20px] leading-[120%] max-[985px]:text-[18px] max-md:text-[16px]">
 				{lines.map((line, index) => (
 					<span key={`${id}-${line}`}>
 						{line}
@@ -66,7 +66,7 @@ function StepCard({ id, title, description }: Step) {
 					</span>
 				))}
 			</h3>
-			<p className="mt-2 text-[15px] leading-[130%] text-[#7C7C7C]">
+			<p className="mt-2 text-[15px] leading-[130%] text-[#7C7C7C] max-md:text-[14px]">
 				{description}
 			</p>
 		</article>
@@ -80,13 +80,13 @@ export default function LaunchPath({ className }: { className?: string }) {
 				src="/images/decor/left-launch-path.png"
 				alt=""
 				aria-hidden="true"
-				className="pointer-events-none absolute top-1/2 left-[calc(50%-50vw)] -translate-y-1/2 select-none"
+				className="pointer-events-none absolute top-1/2 left-[calc(50%-50vw)] -translate-y-1/2 select-none max-[985px]:hidden"
 			/>
 			<img
 				src="/images/decor/right-launch-path.png"
 				alt=""
 				aria-hidden="true"
-				className="pointer-events-none absolute top-1/2 right-[calc(50%-50vw)] -translate-y-1/2 select-none"
+				className="pointer-events-none absolute top-1/2 right-[calc(50%-50vw)] -translate-y-1/2 select-none max-[985px]:hidden"
 			/>
 
 			<div className="default-container relative z-10">
@@ -94,15 +94,15 @@ export default function LaunchPath({ className }: { className?: string }) {
 					Быстрый запуск без боли и технических сложностей
 				</Title>
 
-				<div className="relative mt-10">
-					<div className="absolute left-[70px] right-[280px] top-5 flex justify-between pointer-events-none">
+				<div className="relative mt-10 max-[985px]:mt-8 max-md:mt-6">
+					<div className="absolute left-[50px] right-[296px] top-5 flex justify-between pointer-events-none max-[985px]:hidden">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="259"
 							height="6"
 							viewBox="0 0 259 6"
 							fill="none"
-							className="w-[230px]"
+							className="w-[280px]"
 						>
 							<path
 								d="M0.5 2.38672C0.223858 2.38672 0 2.61058 0 2.88672C0 3.16286 0.223858 3.38672 0.5 3.38672V2.88672V2.38672ZM258.25 2.88672L253.25 -3.26633e-05V5.77347L258.25 2.88672ZM0.5 2.88672V3.38672H253.75V2.88672V2.38672H0.5V2.88672Z"
@@ -115,7 +115,7 @@ export default function LaunchPath({ className }: { className?: string }) {
 							height="6"
 							viewBox="0 0 259 6"
 							fill="none"
-							className="w-[230px]"
+							className="w-[280px]"
 						>
 							<path
 								d="M0.5 2.38672C0.223858 2.38672 0 2.61058 0 2.88672C0 3.16286 0.223858 3.38672 0.5 3.38672V2.88672V2.38672ZM258.25 2.88672L253.25 -3.26633e-05V5.77347L258.25 2.88672ZM0.5 2.88672V3.38672H253.75V2.88672V2.38672H0.5V2.88672Z"
@@ -124,16 +124,25 @@ export default function LaunchPath({ className }: { className?: string }) {
 						</svg>
 					</div>
 
-					<div className="grid grid-cols-3 gap-x-12 gap-y-[74px]">
+					<div className="grid grid-cols-3 gap-x-12 gap-y-[74px] max-[985px]:grid-cols-2 max-[985px]:gap-x-8 max-[985px]:gap-y-10 max-md:grid-cols-1 max-md:gap-6 max-md:text-center">
 						{STEPS_TOP.map((step) => (
 							<StepCard key={step.id} {...step} />
 						))}
-						{STEPS_BOTTOM.map((step) => (
-							<StepCard key={step.id} {...step} />
+						{STEPS_BOTTOM.map((step, i) => (
+							<div
+								key={step.id}
+								className={[
+									"max-[985px]:order-6",
+									"max-[985px]:order-5",
+									"max-[985px]:order-4",
+								][i]}
+							>
+								<StepCard {...step} />
+							</div>
 						))}
 					</div>
 
-					<div className="absolute right-[-7px] top-[20px] pointer-events-none">
+					<div className="absolute right-[-7px] top-[20px] pointer-events-none max-[985px]:hidden">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="233"
@@ -149,14 +158,14 @@ export default function LaunchPath({ className }: { className?: string }) {
 						</svg>
 					</div>
 
-					<div className="absolute left-[70px] right-[280px] top-[244px] flex justify-between pointer-events-none">
+					<div className="absolute left-[50px] right-[296px] top-[260px] flex justify-between pointer-events-none max-[985px]:hidden">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="259"
 							height="6"
 							viewBox="0 0 259 6"
 							fill="none"
-							className="w-[230px]"
+							className="w-[280px]"
 						>
 							<path
 								d="M257.75 3.38672C258.026 3.38672 258.25 3.16286 258.25 2.88672C258.25 2.61058 258.026 2.38672 257.75 2.38672L257.75 2.88672L257.75 3.38672ZM0 2.8867L5 5.77345L5 -5.47595e-05L0 2.8867ZM257.75 2.88672L257.75 2.38672L4.5 2.3867L4.5 2.8867L4.5 3.3867L257.75 3.38672L257.75 2.88672Z"
@@ -169,7 +178,7 @@ export default function LaunchPath({ className }: { className?: string }) {
 							height="6"
 							viewBox="0 0 259 6"
 							fill="none"
-							className="w-[230px]"
+							className="w-[280px]"
 						>
 							<path
 								d="M257.75 3.38672C258.026 3.38672 258.25 3.16286 258.25 2.88672C258.25 2.61058 258.026 2.38672 257.75 2.38672L257.75 2.88672L257.75 3.38672ZM0 2.8867L5 5.77345L5 -5.47595e-05L0 2.8867ZM257.75 2.88672L257.75 2.38672L4.5 2.3867L4.5 2.8867L4.5 3.3867L257.75 3.38672L257.75 2.88672Z"
@@ -179,15 +188,15 @@ export default function LaunchPath({ className }: { className?: string }) {
 					</div>
 				</div>
 
-				<div className="flex-middle mt-[52px]">
+				<div className="flex-middle mt-[52px] max-[985px]:mt-8 max-md:mt-6">
 					<div
-						className="inline-flex items-center justify-center px-10 h-11 rounded-full border border-[#C3C3C3]"
+						className="inline-flex items-center justify-center px-10 h-11 rounded-full border border-[#C3C3C3] max-md:px-6"
 						style={{
 							boxShadow:
 								"0.414px 0.414px 3.313px 0 rgba(0, 0, 0, 0.25), 4.142px 4.97px 3.313px 0 rgba(0, 0, 0, 0.04)",
 						}}
 					>
-						<span className="text-[15px]">
+						<span className="text-[15px] max-md:text-[14px]">
 							Интеграция Velorra занимает от 1 рабочего дня, под
 							ключ.
 						</span>
