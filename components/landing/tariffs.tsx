@@ -205,6 +205,9 @@ export default function Tariffs({ className }: { className?: string }) {
 							style={{
 								boxShadow:
 									"3px 3px 4px 0 rgba(0, 0, 0, 0.02), 5px 5px 10px 0 rgba(0, 0, 0, 0.04)",
+								background: item.isBold
+									? "linear-gradient(137.29deg, #FFFFFF 0%, #F0F6FF 99.99%)"
+									: "",
 							}}
 							key={item.left}
 							className={clsx(

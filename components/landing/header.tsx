@@ -20,7 +20,7 @@ const RIGHT_LINKS = [
 const ALL_LINKS = [...LEFT_LINKS, ...RIGHT_LINKS];
 
 const LINK_CLASSNAME =
-	"relative text-center text-[15px] font-normal text-[#353535] transition-colors hover:text-[#1f1f1f] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-4px] after:h-[1.5px] after:w-0 after:bg-[#353535] after:rounded-full after:transition-all after:duration-300 hover:after:w-full";
+	"relative text-center text-[15px] font-normal text-[#353535] transition-colors hover:text-[#1f1f1f] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-4px] after:h-px after:w-0 after:bg-[#353535] after:rounded-full after:transition-all after:duration-300 hover:after:w-full";
 
 export default function Header({ className }: { className?: string }) {
 	const [menuOpen, setMenuOpen] = useState(false);
