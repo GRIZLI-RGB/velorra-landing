@@ -79,7 +79,7 @@ export default function Tariffs({ className }: { className?: string }) {
 				<Title className="max-w-[700px] mx-auto">
 					Модель оплаты состоит из подписки и минут разговоров.
 				</Title>
-				<div className="mt-10 mb-5 grid grid-cols-3 gap-5">
+				<div className="mt-10 mb-5 grid grid-cols-3 gap-5 max-lg:grid-cols-1">
 					{TARIFFS.map((tariff) => (
 						<div
 							key={tariff.name}
@@ -90,7 +90,7 @@ export default function Tariffs({ className }: { className?: string }) {
 							className="flex flex-col rounded-[20px] border border-[#C1C1C1] bg-[#FDFDFD] py-8 px-6"
 						>
 							<div className="flex items-center gap-3">
-								<h3 className="text-[30px] font-bold leading-[120%]">
+								<h3 className="text-[30px] font-bold leading-[120%] max-md:text-[24px]">
 									{tariff.name}
 								</h3>
 								{tariff.badge && (
@@ -124,7 +124,7 @@ export default function Tariffs({ className }: { className?: string }) {
 									{tariff.oldPrice}
 								</span>
 								<div className="flex items-baseline gap-0.5 tracking-[-0.02em]">
-									<span className="text-[45px] font-bold leading-[120%]">
+									<span className="text-[45px] font-bold leading-[120%] max-md:text-[36px]">
 										{tariff.price}
 									</span>
 									<span className="text-[#242424] font-bold leading-[120%]">
@@ -157,7 +157,7 @@ export default function Tariffs({ className }: { className?: string }) {
 								<span className="block leading-[120%] text-[15px] text-[#8D8D8D]">
 									Входит в тариф:
 								</span>
-								<p className="mt-0.5 mb-px leading-[120%] block font-bold text-[#242424] text-[25px]">
+								<p className="mt-0.5 mb-px block text-[25px] leading-[120%] font-bold text-[#242424] max-md:text-[20px]">
 									{tariff.minutes}
 								</p>
 								<span className="block leading-[120%] text-[8px] text-[#8D8D8D]">
@@ -208,7 +208,7 @@ export default function Tariffs({ className }: { className?: string }) {
 							}}
 							key={item.left}
 							className={clsx(
-								"flex items-center justify-between bg-[#FDFDFD] rounded-[12px] border border-[#C1C1C1] px-6 h-[60px]",
+								"flex h-[60px] items-center justify-between rounded-[12px] border border-[#C1C1C1] bg-[#FDFDFD] px-6 max-md:h-[50px] max-md:px-4 max-md:text-[15px]",
 								item.isBold && "font-bold",
 							)}
 						>
