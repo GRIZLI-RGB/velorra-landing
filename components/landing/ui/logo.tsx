@@ -8,7 +8,7 @@ type LogoProps = {
 export default function Logo({ className }: LogoProps) {
 	return (
 		<Link href="/" aria-label="Velorra home" className={className}>
-			<img className="max-sm:w-[120px]" src="/logo.svg" alt="Velorra" width={155} height={61} />
+			<img className="max-sm:w-[120px] min-w-20" src="/logo.svg" alt="Velorra" width={155} height={61} />
 		</Link>
 	);
 }

@@ -36,7 +36,7 @@ export default function Header({ className }: { className?: string }) {
 		<header className={clsx(className)}>
 			{/* Desktop */}
 			<div className="default-container hidden items-center grid-cols-[1fr_auto_1fr] md:grid">
-				<nav className="flex items-center justify-start gap-4 lg:gap-[60px]">
+				<nav className="flex items-center justify-end gap-[60px] max-lg:gap-8">
 					{LEFT_LINKS.map((link) => (
 						<Link
 							key={link.href}
@@ -48,11 +48,11 @@ export default function Header({ className }: { className?: string }) {
 					))}
 				</nav>
 
-				<div className="mx-2.5 flex items-center justify-center">
+				<div className="mx-[70px] flex items-center justify-center max-lg:mx-6">
 					<Logo />
 				</div>
 
-				<nav className="flex items-center justify-end gap-4 lg:gap-[60px]">
+				<nav className="flex items-center justify-start gap-[60px] max-lg:gap-8">
 					{RIGHT_LINKS.map((link) => (
 						<Link
 							key={link.href}
