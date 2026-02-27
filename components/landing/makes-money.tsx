@@ -35,9 +35,9 @@ function FolderCard({
 	return (
 		<div className="relative">
 			<img src="/images/folder.png" alt="" className="w-full" />
-			<div className="absolute inset-0 flex flex-col justify-end px-5 pb-5">
-				<h3 className="text-[20px] leading-[120%]">{title}</h3>
-				<p className="mt-[5px] text-[15px] text-[#7C7C7C] tracking-[-0.02em]">
+			<div className="absolute inset-0 flex flex-col justify-end px-5 pb-5 max-[985px]:px-4 max-[985px]:pb-4 max-md:px-3 max-md:pb-3">
+				<h3 className="text-[20px] leading-[120%] max-[985px]:text-[18px] max-md:text-[16px]">{title}</h3>
+				<p className="mt-[5px] text-[15px] text-[#7C7C7C] tracking-[-0.02em] max-md:text-[14px]">
 					{description}
 				</p>
 			</div>
@@ -52,24 +52,24 @@ export default function MakesMoney({ className }: { className?: string }) {
 				src="/images/decor/left-bottom-make-money.png"
 				alt=""
 				aria-hidden="true"
-				className="pointer-events-none absolute bottom-0 left-[calc(50%-50vw)] select-none"
+				className="pointer-events-none absolute bottom-0 left-[calc(50%-50vw)] select-none max-[985px]:hidden"
 			/>
 			<img
 				src="/images/decor/right-top-make-money.png"
 				alt=""
 				aria-hidden="true"
-				className="pointer-events-none absolute top-0 right-[calc(50%-50vw)] select-none"
+				className="pointer-events-none absolute top-0 right-[calc(50%-50vw)] select-none max-[985px]:hidden"
 			/>
 
 			<div className="default-container relative z-10">
-				<div className="relative grid grid-cols-4 gap-5">
-					<div className="col-span-2 flex flex-col justify-center w-[390px]">
-						<Title align="left">
+				<div className="relative grid grid-cols-4 gap-5 max-[985px]:grid-cols-2 max-[985px]:gap-4 max-md:grid-cols-1">
+					<div className="col-span-2 flex flex-col justify-center w-[390px] max-[985px]:w-full max-md:col-span-1 max-md:text-center">
+						<Title align="left" className="max-md:text-center">
 							Как{" "}
 							<span className="text-(--color-blue)">Velorra</span>{" "}
 							приносит деньги
 						</Title>
-						<p className="mt-2.5 text-[20px] leading-[140%]">
+						<p className="mt-2.5 text-[20px] leading-[140%] max-[985px]:text-[18px] max-md:text-[16px]">
 							Экономия затрат, рост конверсии
 							<br />и контроль каждого обращения.
 						</p>
@@ -79,17 +79,17 @@ export default function MakesMoney({ className }: { className?: string }) {
 
 					<FolderCard {...BENEFITS[2]} />
 					<FolderCard {...BENEFITS[3]} />
-					<div />
+					<div className="max-[985px]:hidden" />
 					<FolderCard {...BENEFITS[4]} />
 
 					<img
 						src="/images/makes-money-phone.png"
 						alt=""
-						className="absolute left-[62%] top-[40%] z-20 w-[306px] -translate-x-1/2 pointer-events-none"
+						className="absolute left-[62%] top-[40%] z-20 w-[306px] -translate-x-1/2 pointer-events-none max-[985px]:hidden"
 					/>
 				</div>
 
-				<div className="flex-middle mt-10">
+				<div className="flex-middle mt-10 max-[985px]:mt-8 max-md:mt-6">
 					<Button text="Записаться на демонстрацию" />
 				</div>
 			</div>
