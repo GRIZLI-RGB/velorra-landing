@@ -32,7 +32,7 @@ export default function PersonalAccount({ className }: { className?: string }) {
           <Title className="max-w-[560px]">
             Единый кабинет управления ИИ-агентами
           </Title>
-          <p className="mt-5 mb-10 max-w-[600px] text-[20px] text-center">
+          <p className="mt-5 mb-10 max-w-[600px] text-center text-[20px] max-[985px]:mt-3 max-[985px]:mb-6 max-[985px]:text-[18px] max-md:text-[16px]">
             Все ваши ИИ-агенты — в одном месте: по направлениям бизнеса,
             статусам подписки и номерам. Создавайте новых агентов и управляйте
             подпиской в пару кликов.
@@ -42,14 +42,14 @@ export default function PersonalAccount({ className }: { className?: string }) {
             <button
               onClick={prev}
               aria-label="Предыдущий слайд"
-              className="absolute left-3 z-10 flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center min-[1169px]:-left-16 min-[1169px]:h-10 min-[1169px]:w-10 max-[768px]:h-8 max-[768px]:w-8"
+              className="absolute left-3 z-10 flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center min-[1169px]:-left-16 min-[1169px]:h-10 min-[1169px]:w-10 max-[985px]:left-2 max-[985px]:h-8 max-[985px]:w-8 max-md:h-7 max-md:w-7"
             >
               <Image
                 src="/images/personal-account/slider/arrow-left.svg"
                 alt=""
                 width={11}
                 height={32}
-                className="h-8 w-auto max-[768px]:h-6"
+                className="h-8 w-auto max-[985px]:h-6 max-md:h-5"
               />
             </button>
 
@@ -75,19 +75,19 @@ export default function PersonalAccount({ className }: { className?: string }) {
             <button
               onClick={next}
               aria-label="Следующий слайд"
-              className="absolute right-3 z-10 flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center min-[1169px]:-right-16 min-[1169px]:h-10 min-[1169px]:w-10 max-[768px]:h-8 max-[768px]:w-8"
+              className="absolute right-3 z-10 flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center min-[1169px]:-right-16 min-[1169px]:h-10 min-[1169px]:w-10 max-[985px]:right-2 max-[985px]:h-8 max-[985px]:w-8 max-md:h-7 max-md:w-7"
             >
               <Image
                 src="/images/personal-account/slider/arrow-right.svg"
                 alt=""
                 width={11}
                 height={32}
-                className="h-8 w-auto max-[768px]:h-6"
+                className="h-8 w-auto max-[985px]:h-6 max-md:h-5"
               />
             </button>
           </div>
 
-          <p className="mt-5 mb-7 text-center text-[20px]">
+          <p className="mt-5 mb-7 text-center text-[20px] max-[985px]:mt-4 max-[985px]:mb-6 max-[985px]:text-[18px] max-md:text-[16px]">
             Зарегистрируйтесь в Velorra
             <br />и создайте первого ИИ-агента уже сегодня
           </p>

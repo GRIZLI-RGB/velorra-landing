@@ -8,15 +8,15 @@ export default function DataSecurity({ className }: { className?: string }) {
 				src="/images/decor/left-data-security.png"
 				alt=""
 				aria-hidden="true"
-				className="pointer-events-none absolute top-1/2 left-[calc(50%-50vw)] -translate-y-1/2 select-none"
+				className="pointer-events-none absolute top-1/2 left-[calc(50%-50vw)] -translate-y-1/2 select-none max-[985px]:hidden"
 			/>
 
-			<div className="default-container relative z-10 flex gap-11 items-center">
+			<div className="default-container relative z-10 flex items-center gap-11 max-[985px]:flex-col max-[985px]:gap-6 max-[985px]:text-center">
 				<div className="max-w-[560px]">
-					<Title as="h2" align="left">
+					<Title as="h2" align="left" className="max-[985px]:text-center">
 						Безопасность данных
 					</Title>
-					<p className="text-[25px] mt-2.5">
+					<p className="mt-2.5 text-[25px] max-[985px]:text-[20px] max-md:text-[18px]">
 						Все данные хранятся и обрабатываются на российских
 						серверах с использованием собственных LLM моделей.
 						Строгое соблюдение ФЗ-152 «О персональных данных».
@@ -27,6 +27,7 @@ export default function DataSecurity({ className }: { className?: string }) {
 					alt=""
 					width={343}
 					height={385}
+					className="h-auto w-[343px] max-[985px]:w-[260px] max-md:w-[220px]"
 				/>
 			</div>
 		</section>

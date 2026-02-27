@@ -47,20 +47,20 @@ export default function Features({ className }: { className?: string }) {
 				src="/images/decor/center-features.png"
 				alt=""
 				aria-hidden="true"
-				className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none"
+				className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-[985px]:opacity-70 max-md:hidden"
 			/>
 
 			<div className="default-container relative z-10">
 				<div className="flex-middle flex-col">
 					<Title>Ключевые возможности</Title>
-					<p className="mt-2.5 mb-10 text-[25px] max-w-[365px] text-center">
+					<p className="mt-2.5 mb-10 max-w-[365px] text-center text-[25px] max-[985px]:mb-8 max-[985px]:text-[20px] max-md:text-[18px]">
 						Полный набор инструментов для автоматизации телефонии
 					</p>
-					<div className="grid grid-cols-2 gap-10 w-full">
+					<div className="grid w-full grid-cols-2 gap-10 max-[985px]:grid-cols-1 max-[985px]:gap-6 max-md:gap-4">
 						{FEATURES.map((feature) => (
 							<div
 								key={feature.title}
-								className="rounded-[18px] bg-[#FDFDFD] border border-[#C1C1C1] p-[30px] flex items-start gap-4"
+								className="flex items-start gap-4 rounded-[18px] border border-[#C1C1C1] bg-[#FDFDFD] p-[30px] max-[985px]:gap-3 max-[985px]:p-6 max-md:p-4"
 								style={{
 									boxShadow:
 										"3px 3px 4px 0 rgba(0, 0, 0, 0.04), 7px 7px 10px 0 rgba(0, 0, 0, 0.05)",
@@ -69,13 +69,13 @@ export default function Features({ className }: { className?: string }) {
 								<img
 									src={feature.icon}
 									alt=""
-									className="w-[30px] h-[30px] shrink-0"
+									className="h-[30px] w-[30px] shrink-0 max-[985px]:h-7 max-[985px]:w-7 max-md:h-6 max-md:w-6"
 								/>
 								<div>
-									<h3 className="text-[20px]">
+									<h3 className="text-[20px] max-[985px]:text-[18px] max-md:text-[17px]">
 										{feature.title}
 									</h3>
-									<p className="text-[15px] text-[#7C7C7C] mt-1.5 max-w-[340px]">
+									<p className="mt-1.5 max-w-[340px] text-[15px] text-[#7C7C7C] max-md:text-[14px]">
 										{feature.description}
 									</p>
 								</div>
